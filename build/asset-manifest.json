@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Furniro-ui/static/css/main.875ca71a.css",
+    "main.js": "/Furniro-ui/static/js/main.f36dc14e.js",
+    "static/media/shop.jpg": "/Furniro-ui/static/media/shop.41ad7a435d958d6ad0b3.jpg",
+    "static/media/product3.jpg": "/Furniro-ui/static/media/product3.1564e017f736bc30913a.jpg",
+    "static/media/product1.jpg": "/Furniro-ui/static/media/product1.31f7c8aaf13cd4952fcf.jpg",
+    "static/media/product2.jpg": "/Furniro-ui/static/media/product2.c5e40864559bff13b55e.jpg",
+    "static/media/product4.jpg": "/Furniro-ui/static/media/product4.a4f72558bd33b19f600a.jpg",
+    "static/media/logo.png": "/Furniro-ui/static/media/logo.8b3902a496cb1c4c3050.png",
+    "index.html": "/Furniro-ui/index.html",
+    "main.875ca71a.css.map": "/Furniro-ui/static/css/main.875ca71a.css.map",
+    "main.f36dc14e.js.map": "/Furniro-ui/static/js/main.f36dc14e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.875ca71a.css",
+    "static/js/main.f36dc14e.js"
+  ]
+}
