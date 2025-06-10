@@ -6,31 +6,43 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 // Replace with your actual MongoDB Atlas connection string
 const MONGO_URI = process.env.MONGO_URI;
 
-app.use(cors());
+// CORS configuration
+app.use(
+  cors({
+    origin:
+      process.env.NODE_ENV === "production"
+        ? ["https://ecommerce-frontend.onrender.com", "http://localhost:3000"]
+        : "http://localhost:3000",
+    credentials: true,
+  })
+);
 app.use(bodyParser.json());
 
 // Connect to MongoDB
 mongoose
-  .connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
 // Product Schema
-const productSchema = new mongoose.Schema({
-  name: String,
-  brand: String,
-  category: String,
-  price: Number,
-  oldPrice: Number,
-  image: String,
-  badge: String,
-  isNew: Boolean,
-});
+const productSchema = new mongoose.Schema(
+  {
+    name: String,
+    brand: String,
+    category: String,
+    price: Number,
+    oldPrice: Number,
+    image: String,
+    badge: String,
+    isNewProduct: Boolean,
+  },
+  { suppressReservedKeysWarning: true }
+);
 
 const Product = mongoose.model("Product", productSchema);
 
