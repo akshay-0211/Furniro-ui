@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd task-q1/client && npm install && npm run build",
+  "outputDirectory": "task-q1/client/build",
+  "framework": "create-react-app",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+} 
