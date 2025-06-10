@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: ecommerce-backend
+    env: node
+    buildCommand: cd task-q1/server && npm install
+    startCommand: cd task-q1/server && node index.js
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: NODE_ENV
+        value: production
+
+  - type: web
+    name: ecommerce-frontend
+    env: static
+    buildCommand: cd task-q1/client && npm install && npm run build
+    staticPublishPath: task-q1/client/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://ecommerce-backend.onrender.com
