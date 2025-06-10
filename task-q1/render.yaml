@@ -2,8 +2,8 @@ services:
   - type: web
     name: ecommerce-backend
     env: node
-    buildCommand: cd task-q1/server && npm install
-    startCommand: cd task-q1/server && node index.js
+    buildCommand: cd server && npm install
+    startCommand: cd server && node index.js
     envVars:
       - key: MONGO_URI
         sync: false
@@ -13,8 +13,8 @@ services:
   - type: web
     name: ecommerce-frontend
     env: static
-    buildCommand: cd task-q1/client && npm install && npm run build
-    staticPublishPath: task-q1/client/build
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: client/build
     envVars:
       - key: REACT_APP_API_URL
         value: https://furniro-backend-1-pt38.onrender.com
